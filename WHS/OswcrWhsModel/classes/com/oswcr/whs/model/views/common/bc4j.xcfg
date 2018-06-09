@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="com.oswcr.whs.model.views.WHSModule">
+    <AppModuleConfig name="WHSModuleLocal" jbo.project="com.oswcr.whs.model.OswcrWhsModel"
+                     ApplicationName="com.oswcr.whs.model.views.WHSModule" DeployPlatform="LOCAL">
+      <Database jbo.sql92.JdbcDriverClass="com.mysql.jdbc.Driver" JDBCDataSource="java:comp/env/jdbc/OSWCRDS"
+                jbo.SQLBuilder="SQL92"/>
+      <Security AppModuleJndiName="com.oswcr.whs.model.views.WHSModule"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="WHSModuleShared" jbo.project="com.oswcr.whs.model.OswcrWhsModel"
+                     ApplicationName="com.oswcr.whs.model.views.WHSModule" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.sql92.JdbcDriverClass="com.mysql.jdbc.Driver" JDBCDataSource="java:comp/env/jdbc/OSWCRDS"
+                jbo.SQLBuilder="SQL92"/>
+      <Security AppModuleJndiName="com.oswcr.whs.model.views.WHSModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

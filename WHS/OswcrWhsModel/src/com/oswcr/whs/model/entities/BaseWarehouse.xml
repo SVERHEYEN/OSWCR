@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BaseWarehouse"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="BASE_WAREHOUSE"
+  AliasName="BaseWarehouse"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Code"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="8"
+    ColumnName="CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="BASE_WAREHOUSE"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    RetrievedOnInsert="true"
+    ChangeIndicator="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="8"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.oswcr.whs.model.entities.BaseWarehouse.Code_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ShortName"
+    Precision="15"
+    ColumnName="SHORT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="BASE_WAREHOUSE"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"
+    ChangeIndicator="true"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.oswcr.whs.model.entities.BaseWarehouse.ShortName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Name"
+    Precision="35"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="BASE_WAREHOUSE"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"
+    ChangeIndicator="true"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="35"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.oswcr.whs.model.entities.BaseWarehouse.Name_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="200"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="BASE_WAREHOUSE"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"
+    ChangeIndicator="true"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.oswcr.whs.model.entities.BaseWarehouse.Description_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Inactive"
+    ColumnName="INACTIVE"
+    SQLType="TINYINT"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="TINYINT"
+    TableName="BASE_WAREHOUSE"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"
+    ChangeIndicator="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.oswcr.whs.model.entities.BaseWarehouse.Inactive_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Key
+    Name="BaseWarehouseDescriptionCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"DESCRIPTION" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Base_Warehouse_Description_Che"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.oswcr.whs.model.entities.BaseWarehouse.Description"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BaseWarehouseNameCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Base_Warehouse_Name_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.oswcr.whs.model.entities.BaseWarehouse.Name"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BaseWarehouseShortNameCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"SHORT_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Base_Warehouse_Short_Name_Chec"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.oswcr.whs.model.entities.BaseWarehouse.ShortName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CodeUnique">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CODE_UNIQUE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.oswcr.whs.model.entities.BaseWarehouse.Code"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.oswcr.whs.model.entities.BaseWarehouse.Code"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.oswcr.whs.model.OswcrWhsModelBundle"/>
+  </ResourceBundle>
+</Entity>

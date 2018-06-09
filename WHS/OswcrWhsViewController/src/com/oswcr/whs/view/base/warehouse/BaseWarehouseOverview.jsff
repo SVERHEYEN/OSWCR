@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelSplitter orientation="vertical" splitterPosition="50" id="ps1">
+        <f:facet name="first"/>
+        <f:facet name="second">
+            <af:listView value="#{bindings.BaseWarehouseOverviewViewInstance.collectionModel}" var="item"
+                         emptyText="#{bindings.BaseWarehouseOverviewViewInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
+                         fetchSize="#{bindings.BaseWarehouseOverviewViewInstance.rangeSize}" id="lv1">
+                <af:listItem id="li1">
+                    <af:panelGroupLayout layout="horizontal" id="pgl1">
+                        <f:facet name="separator">
+                            <af:spacer width="10" id="s1"/>
+                        </f:facet>
+                        <af:outputFormatted value="#{item.bindings.Code.inputValue}" id="of1"/>
+                        <af:outputFormatted value="#{item.bindings.ShortName.inputValue}" id="of2"/>
+                        <af:outputFormatted value="#{item.bindings.Name.inputValue}" id="of3"/>
+                        <af:outputFormatted value="#{item.bindings.Description.inputValue}" id="of4"/>
+                        <af:selectBooleanCheckbox value="#{item.bindings.Inactive.inputValue}" id="of5"
+                                                  label="#{bindings.BaseWarehouseOverviewViewInstance.hints.Inactive.label}">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.BaseWarehouseOverviewViewInstance.hints.Inactive.format}"/>
+                        </af:selectBooleanCheckbox>
+                    </af:panelGroupLayout>
+                </af:listItem>
+            </af:listView>
+        </f:facet>
+    </af:panelSplitter>
+</ui:composition>

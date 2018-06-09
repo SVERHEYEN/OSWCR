@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="home.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:panelSplitter id="ps1">
+            <f:facet name="first">
+                <af:panelGroupLayout id="pgl1" layout="vertical">
+                    <af:panelGridLayout id="pgl2">
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+                            <af:gridCell marginStart="5px" width="20%" id="gc1">
+                                <af:outputText value="#{bindings.BaseWarehouseOverviewViewInstance.hints.Code.label}"
+                                               id="ot1"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="20%" id="gc2">
+                                <af:outputText value="#{bindings.BaseWarehouseOverviewViewInstance.hints.ShortName.label}"
+                                               id="ot2"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="20%" id="gc3">
+                                <af:outputText value="#{bindings.BaseWarehouseOverviewViewInstance.hints.Name.label}"
+                                               id="ot3"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="20%" id="gc4">
+                                <af:outputText value="#{bindings.BaseWarehouseOverviewViewInstance.hints.Description.label}"
+                                               id="ot4"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="20%" marginEnd="5px" id="gc5">
+                                <af:outputText value="#{bindings.BaseWarehouseOverviewViewInstance.hints.Inactive.label}"
+                                               id="ot5"/>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                    <af:listView value="#{bindings.BaseWarehouseOverviewViewInstance.collectionModel}" var="item"
+                                 emptyText="#{bindings.BaseWarehouseOverviewViewInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                 fetchSize="#{bindings.BaseWarehouseOverviewViewInstance.rangeSize}" id="lv1">
+                        <af:listItem id="li1">
+                            <af:panelGridLayout id="pgl3">
+                                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+                                    <af:gridCell marginStart="5px" width="20%" id="gc6">
+                                        <af:outputFormatted value="#{item.bindings.Code.inputValue}" id="of1"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" width="20%" id="gc7">
+                                        <af:outputFormatted value="#{item.bindings.ShortName.inputValue}" id="of2"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" width="20%" id="gc8">
+                                        <af:outputFormatted value="#{item.bindings.Name.inputValue}" id="of3"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" width="20%" id="gc9">
+                                        <af:outputFormatted value="#{item.bindings.Description.inputValue}" id="of4"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" width="20%" marginEnd="5px" id="gc10">
+                                        <af:selectBooleanCheckbox value="#{item.bindings.Inactive.inputValue}" id="of5"
+                                                                  disabled="true" readOnly="true" simple="true">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.BaseWarehouseOverviewViewInstance.hints.Inactive.format}"/>
+                                        </af:selectBooleanCheckbox>
+                                    </af:gridCell>
+                                </af:gridRow>
+                            </af:panelGridLayout>
+                        </af:listItem>
+                    </af:listView>
+                </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="second">
+                <af:form id="f1">
+                    <af:panelFormLayout id="pfl1">
+                        <af:inputText value="#{bindings.Code.inputValue}" label="#{bindings.Code.hints.label}"
+                                      required="#{bindings.Code.hints.mandatory}"
+                                      columns="#{bindings.Code.hints.displayWidth}"
+                                      maximumLength="#{bindings.Code.hints.precision}"
+                                      shortDesc="#{bindings.Code.hints.tooltip}" id="it1">
+                            <f:validator binding="#{bindings.Code.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.ShortName.inputValue}" label="#{bindings.ShortName.hints.label}"
+                                      required="#{bindings.ShortName.hints.mandatory}"
+                                      columns="#{bindings.ShortName.hints.displayWidth}"
+                                      maximumLength="#{bindings.ShortName.hints.precision}"
+                                      shortDesc="#{bindings.ShortName.hints.tooltip}" id="it2">
+                            <f:validator binding="#{bindings.ShortName.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Name.inputValue}" label="#{bindings.Name.hints.label}"
+                                      required="#{bindings.Name.hints.mandatory}"
+                                      columns="#{bindings.Name.hints.displayWidth}"
+                                      maximumLength="#{bindings.Name.hints.precision}"
+                                      shortDesc="#{bindings.Name.hints.tooltip}" id="it3">
+                            <f:validator binding="#{bindings.Name.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Description.inputValue}"
+                                      label="#{bindings.Description.hints.label}"
+                                      required="#{bindings.Description.hints.mandatory}"
+                                      columns="#{bindings.Description.hints.displayWidth}"
+                                      maximumLength="#{bindings.Description.hints.precision}"
+                                      shortDesc="#{bindings.Description.hints.tooltip}" id="it4">
+                            <f:validator binding="#{bindings.Description.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Inactive.inputValue}" label="#{bindings.Inactive.hints.label}"
+                                      required="#{bindings.Inactive.hints.mandatory}"
+                                      columns="#{bindings.Inactive.hints.displayWidth}"
+                                      maximumLength="#{bindings.Inactive.hints.precision}"
+                                      shortDesc="#{bindings.Inactive.hints.tooltip}" id="it5">
+                            <f:validator binding="#{bindings.Inactive.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Inactive.format}"/>
+                        </af:inputText>
+                        <f:facet name="footer">
+                            <af:button text="Submit" id="b1"/>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </af:form>
+            </f:facet>
+        </af:panelSplitter>
+    </af:document>
+</f:view>

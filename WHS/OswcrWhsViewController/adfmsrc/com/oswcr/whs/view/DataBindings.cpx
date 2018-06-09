@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.oswcr.whs.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="main/webapp/untitled1.jsff" usageId="com_oswcr_whs_view_untitled1PageDef"/>
+    <page path="file:/C:/sysdata/OSWCR/WHS/OswcrWhsViewController/src/com/oswcr/whs/view/basewarehouse/BaseWarehouseOverview.jsff" usageId="com_oswcr_whs_view_untitled1PageDef"/>
+    <page path="main/webapp/BaseWarehouse/BaseWarehouseDetail.jsff"
+          usageId="com_oswcr_whs_view_BaseWarehouseDetailPageDef"/>
+    <page path="file:/C:/sysdata/OSWCR/WHS/OswcrWhsViewController/src/com/oswcr/whs/view/basewarehouse/BaseWarehouseDetail.jsff" usageId="com_oswcr_whs_view_BaseWarehouseDetailPageDef"/>
+    <page path="main/webapp/BaseWarehouse.jsf" usageId="com_oswcr_whs_view_BaseWarehousePageDef"/>
+    <page path="/BaseWarehouse.jsf" usageId="com_oswcr_whs_view_BaseWarehousePageDef"/>
+    <page path="main/webapp/home.jsf" usageId="com_oswcr_whs_view_homePageDef"/>
+    <page path="/home.jsf" usageId="com_oswcr_whs_view_homePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_oswcr_whs_view_untitled1PageDef" path="com.oswcr.whs.view.pageDefs.BaseWarehouseOverview"/>
+    <page id="com_oswcr_whs_view_BaseWarehouseDetailPageDef"
+          path="com.oswcr.whs.view.pageDefs.BaseWarehouseDetailPageDef"/>
+    <page id="com_oswcr_whs_view_BaseWarehousePageDef" path="com.oswcr.whs.view.pageDefs.BaseWarehousePageDef"/>
+    <page id="com_oswcr_whs_view_homePageDef" path="com.oswcr.whs.view.pageDefs.homePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="WHSModuleDataControl" Package="com.oswcr.whs.model.views"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="WHSModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

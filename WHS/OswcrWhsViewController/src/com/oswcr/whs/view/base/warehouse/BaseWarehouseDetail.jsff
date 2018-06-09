@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="100%" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Content -->
+                <af:panelFormLayout id="pfl1">
+                    <af:inputText value="#{bindings.Code.inputValue}" label="#{bindings.Code.hints.label}"
+                                  required="#{bindings.Code.hints.mandatory}"
+                                  columns="#{bindings.Code.hints.displayWidth}"
+                                  maximumLength="#{bindings.Code.hints.precision}"
+                                  shortDesc="#{bindings.Code.hints.tooltip}" id="it1">
+                        <f:validator binding="#{bindings.Code.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.ShortName.inputValue}" label="#{bindings.ShortName.hints.label}"
+                                  required="#{bindings.ShortName.hints.mandatory}"
+                                  columns="#{bindings.ShortName.hints.displayWidth}"
+                                  maximumLength="#{bindings.ShortName.hints.precision}"
+                                  shortDesc="#{bindings.ShortName.hints.tooltip}" id="it2">
+                        <f:validator binding="#{bindings.ShortName.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.Name.inputValue}" label="#{bindings.Name.hints.label}"
+                                  required="#{bindings.Name.hints.mandatory}"
+                                  columns="#{bindings.Name.hints.displayWidth}"
+                                  maximumLength="#{bindings.Name.hints.precision}"
+                                  shortDesc="#{bindings.Name.hints.tooltip}" id="it3">
+                        <f:validator binding="#{bindings.Name.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.Description.inputValue}" label="#{bindings.Description.hints.label}"
+                                  required="#{bindings.Description.hints.mandatory}"
+                                  columns="#{bindings.Description.hints.displayWidth}"
+                                  maximumLength="#{bindings.Description.hints.precision}"
+                                  shortDesc="#{bindings.Description.hints.tooltip}" id="it4">
+                        <f:validator binding="#{bindings.Description.validator}"/>
+                    </af:inputText>
+                    <af:selectBooleanCheckbox value="#{bindings.Inactive.inputValue}"
+                                              label="#{bindings.Inactive.hints.label}"
+                                              required="#{bindings.Inactive.hints.mandatory}"
+                                              shortDesc="#{bindings.Inactive.hints.tooltip}" id="it5"
+                                              text="selectBooleanCheckbox 1">
+                        <f:validator binding="#{bindings.Inactive.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Inactive.format}"/>
+                    </af:selectBooleanCheckbox>
+                </af:panelFormLayout>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</ui:composition>

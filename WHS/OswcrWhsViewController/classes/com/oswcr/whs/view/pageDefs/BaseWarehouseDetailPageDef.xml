@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="BaseWarehouseDetailPageDef"
+                Package="com.oswcr.whs.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BaseWarehouseViewInstance" RangeSize="25" DataControl="WHSModuleDataControl"
+              id="BaseWarehouseViewInstanceIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="BaseWarehouseViewInstanceIterator" id="Code">
+      <AttrNames>
+        <Item Value="Code"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseWarehouseViewInstanceIterator" id="ShortName">
+      <AttrNames>
+        <Item Value="ShortName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseWarehouseViewInstanceIterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseWarehouseViewInstanceIterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseWarehouseViewInstanceIterator" id="Inactive">
+      <AttrNames>
+        <Item Value="Inactive"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

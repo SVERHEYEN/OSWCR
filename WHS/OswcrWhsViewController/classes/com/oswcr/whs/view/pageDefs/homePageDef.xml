@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="homePageDef"
+                Package="com.oswcr.whs.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="BaseWarehouseBTF1" taskFlowId="/taskflows/base/warehouse/BaseWarehouseBTF.xml#BaseWarehouseBTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="BaseWarehouseOverviewViewInstance" RangeSize="25" DataControl="WHSModuleDataControl"
+              id="BaseWarehouseOverviewViewInstanceIterator"/>
+    <iterator Binds="BaseWarehouseViewInstance" RangeSize="25" DataControl="WHSModuleDataControl"
+              id="BaseWarehouseViewInstanceIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="BaseWarehouseOverviewViewInstanceIterator" id="BaseWarehouseOverviewViewInstance">
+      <nodeDefinition DefName="com.oswcr.whs.model.views.BaseWarehouseOverviewView"
+                      Name="BaseWarehouseOverviewViewInstance0">
+        <AttrNames>
+          <Item Value="Code"/>
+          <Item Value="ShortName"/>
+          <Item Value="Name"/>
+          <Item Value="Description"/>
+          <Item Value="Inactive"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="BaseWarehouseViewInstanceIterator" id="Code">
+      <AttrNames>
+        <Item Value="Code"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseWarehouseViewInstanceIterator" id="ShortName">
+      <AttrNames>
+        <Item Value="ShortName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseWarehouseViewInstanceIterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseWarehouseViewInstanceIterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseWarehouseViewInstanceIterator" id="Inactive">
+      <AttrNames>
+        <Item Value="Inactive"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
